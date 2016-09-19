@@ -19,9 +19,12 @@ public class SeguridadSocial {
 
     public void altaPersona(Persona persona) {
 
+        personasList.add(persona);
     }
 
     public void bajaPersona(String dni) {
+
+        personasList.removeIf(persona -> persona.getDni().equals(dni));
 
     }
 
