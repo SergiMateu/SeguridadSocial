@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println("obtenerPersonaPorNumSS: " +
 
-                seguridadSocial.obtenerPersonaPorNumSS(maria.getNumSeguridadSocial()));
+                seguridadSocial.obtenerPersonaPorNumSS(maria.getNumSS()));
 
         System.out.println("obtenerPersonasRangoSalarial: " +
 

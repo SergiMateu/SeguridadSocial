@@ -1,6 +1,7 @@
 /**
  * Created by Sergi Mateu on 19/09/2016.
  */
+import java.util.ArrayList;
 import java.util.List;
 
 public class SeguridadSocial {
