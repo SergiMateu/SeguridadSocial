@@ -19,10 +19,39 @@ public class SeguridadSocial {
 
     public void altaPersona(Persona persona) {
 
-        personasList.add(persona);
+        boolean repetida = false;
+
+        for(Persona personaActual : personasList){
+
+            if (personaActual.getDni().equals(persona.getDni()) || personaActual.getNumSS().equals(persona.getNumSS())){
+
+                repetida = true;
+                break;
+            }
+
+        }
+        if(!repetida){
+            personasList.add(persona);
+        }
+
+
     }
 
     public void bajaPersona(String dni) {
+
+        Persona aux = null;
+
+        for(Persona personaActual : personasList){
+
+            if(personaActual.getDni().equals(dni)){
+
+                aux = personaActual;
+                break;
+            }
+        }
+        if(aux!=null){
+            personasList.remove(aux);
+        }
 
         personasList.removeIf(persona -> persona.getDni().equals(dni));
 
@@ -30,18 +59,53 @@ public class SeguridadSocial {
 
     public Persona obtenerPersonaPorDNI(String dni) {
 
+        for(Persona personaActual : personasList){
+
+            if(personaActual.getDni().equals(dni)){
+
+               return personaActual;
+            }
+        }
+
+        return null;
+
+
     }
 
     public Persona obtenerPersonaPorNumSS(String numSS) {
 
+        for(Persona personaActual : personasList){
+
+            if(personaActual.getNumSS().equals(numSS)){
+
+                return personaActual;
+            }
+        }
+
+        return null;
+
     }
 
-    public List<Persona>obtenerPersonasRangoSalarial(double min, double max){
+    public List<Persona>obtenerPersonasRangoSalarial(double min, double max) {
 
+        List<Persona> aux = new ArrayList<>();
+        for (Persona personaActual : personasList) {
+            if (personaActual.getSalario() >= min && personaActual.getSalario() >= max) {
+                aux.add(personaActual);
+            }
+        }
+        return aux;
     }
 
     public List<Persona>obtenerPersonasMayoresQue(int edad){
 
+            List<Persona> aux = new ArrayList<>();
+            for(Persona personaActual : personasList){
+                if(personaActual.getEdad()> edad){
+                    aux.add(personaActual);
+                }
+            }
+            return aux;
     }
 
     public List<Persona> obtenerTodas(){
