@@ -92,7 +92,7 @@ public class SeguridadSocial {
 
         List<Persona> aux = new ArrayList<>();
         for (Persona personaActual : personasList) {
-            if (personaActual.getSalario() >= min && personaActual.getSalario() >= max) {
+            if (personaActual.getSalario() >= min && personaActual.getSalario() <= max) {
                 aux.add(personaActual);
             }
         }

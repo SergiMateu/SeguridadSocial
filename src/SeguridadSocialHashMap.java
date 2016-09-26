@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -46,15 +48,41 @@ public Persona obtenerPersonaPorDNI(String dni){
 
     }
 
-    public Persona obtenerPersonasRangoSalarial(String numSS){
+    public List<Persona> obtenerPersonasRangoSalarial(double min, double max) {
 
-
-        return personaMapSS.get(numSS);
-
+        List<Persona> aux = new ArrayList<>();
+        for (Persona persona : personaMapDni.values()) {
+            if (persona.getSalario() >= min && persona.getSalario() <= max) {
+                aux.add(persona);
+            }
+        }
+        return aux;
     }
 
 
+    public List<Persona>obtenerPersonasMayoresQue(int edad){
+
+        List<Persona> aux = new ArrayList<>();
+        for(Persona persona : personaMapDni.values()) {
+            if(persona.getEdad()> edad){
+                aux.add(persona);
+            }
+        }
+        return aux;
+    }
+
+    public List<Persona> obtenerTodas(){
+
+        List<Persona> aux = new ArrayList<>();
 
 
+        for(Persona persona : personaMapDni.values()){
+
+            aux.add(persona);
+        }
+
+        return aux;
+
+    }
 
 }
