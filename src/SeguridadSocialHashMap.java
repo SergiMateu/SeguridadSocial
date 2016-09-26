@@ -18,13 +18,43 @@ public class SeguridadSocialHashMap {
         }
     }
 
+    public void bajaPersona(Persona persona) {
+        if (!personaMapDni.containsKey(persona.getDni())) {
+
+            personaMapDni.remove(persona.getDni(), persona);
+
+
+        }
+    }
+
+
 public Persona obtenerPersonaPorDNI(String dni){
 
     //personaMapDni.keySet(); Coger todas las keys
     //personaMapDni.values(); Coger todas las values
-    //personaMapDni.remove(dni);
+    //personaMapDni.remove(dni);feggdgjjgdfjdfgfdgdjg
+
 
     return personaMapDni.get(dni);
+
     }
+
+    public Persona obtenerPersonaPorNumSS(String numSS){
+
+
+        return personaMapDni.get(numSS);
+
+    }
+
+    public Persona obtenerPersonasRangoSalarial(String numSS){
+
+
+        return personaMapSS.get(numSS);
+
+    }
+
+
+
+
 
 }
