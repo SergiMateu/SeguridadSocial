@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by usu26 on 23/09/2016.
  */
-public class SeguridadSocialHashMap {
-    private Map<String, Persona> personaMapDni = new HashMap<>();
-    private Map<String, Persona> personaMapSS = new HashMap<>();
+public class SeguridadSocialTreeMap {
+    private Map<String, Persona> personaMapDni = new TreeMap<>();
+    private Map<String, Persona> personaMapSS = new TreeMap<>();
 
     public void altaPersona(Persona persona) {
         if (!personaMapDni.containsKey(persona.getDni()) && !personaMapSS.containsKey(persona.getNumSS())) {
@@ -33,14 +30,14 @@ public class SeguridadSocialHashMap {
     }
 
 
-public Persona obtenerPersonaPorDNI(String dni){
+    public Persona obtenerPersonaPorDNI(String dni){
 
-    //personaMapDni.keySet(); Coger todas las keys
-    //personaMapDni.values(); Coger todas las values
-    //personaMapDni.remove(dni);feggdgjjgdfjdfgfdgdjg
+        //personaMapDni.keySet(); Coger todas las keys
+        //personaMapDni.values(); Coger todas las values
+        //personaMapDni.remove(dni);feggdgjjgdfjdfgfdgdjg
 
 
-    return personaMapDni.get(dni);
+        return personaMapDni.get(dni);
 
     }
 

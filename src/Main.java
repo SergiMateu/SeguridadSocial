@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SeguridadSocial seguridadSocial = new SeguridadSocial();
+        SeguridadSocialTreeMap seguridadSocial = new SeguridadSocialTreeMap();
 
         Persona jose = new Persona("39425364H", "111111111", "Jose", "Tomás", 35, 45000.00);
 
